@@ -9,7 +9,7 @@ public class Employee {
 
     public double getTotalPay(){
         double regularPay = getRegularHours() * payRate;
-        double overTimePay = getOvertimeHours() * payRate;
+        double overTimePay = getOvertimeHours() * payRate * 1.5;
 
         return regularPay + overTimePay;
     }
