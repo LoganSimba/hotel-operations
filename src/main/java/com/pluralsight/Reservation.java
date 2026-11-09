@@ -11,6 +11,10 @@ public class Reservation {
     private boolean weekend;
 
 
+    public String getRoomType() {
+        return roomType;
+    }
+
     public void setRoomType(String roomType) {
         this.roomType = roomType;
     }
@@ -18,7 +22,7 @@ public class Reservation {
     public double getPrice() {
         double king = 139.00;
 
-        if (this.roomType.equalsIgnoreCase("king")) {
+        if (roomType.equalsIgnoreCase("king")) {
             return king;
         }
         return 124;
