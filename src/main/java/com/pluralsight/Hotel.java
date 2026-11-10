@@ -5,45 +5,49 @@ public class Hotel {
     private String name;
     private int numberOfSuites;
     private int numberOfRooms;
+    private int bookedSuites;
     private int bookedBasicRooms;
-    private int kingSuites;
-    private int numberOfDoublerooms;
 
 
-
+    //constructor 1
     public Hotel(String name, int numberOfSuites, int numberOfRooms) {
         this.name = name;
         this.numberOfSuites = numberOfSuites;
         this.numberOfRooms = numberOfRooms;
+        this.bookedSuites = 0;
+        this.bookedBasicRooms = 0;
     }
-
+    //constructor 2
     public Hotel(String name, int numberOfSuites, int numberOfRooms, int bookedBasicRooms) {
         this.name = name;
         this.numberOfSuites = numberOfSuites;
         this.numberOfRooms = numberOfRooms;
         this.bookedBasicRooms = bookedBasicRooms;
     }
-
+    //added a book room method and logic
     public boolean bookRoom(int roomCount, boolean suite){
-        if(numberOfRooms > 0){
-            if(suite){
-                numberOfSuites -= roomCount;
+        if (suite) {
+            if (roomCount <= getAvailableSuites()) {
+                bookedSuites += roomCount;
+                return true;
             }
-            else{
-                numberOfDoublerooms -= roomCount;
+        } else {
+            if (roomCount <= getAvailableRooms()) {
+                bookedBasicRooms += roomCount;
+                return true;
             }
-            numberOfRooms -= roomCount;
         }
         return false;
     }
 
-
-    public int getAvailableSuites(){
-        if(kingSuites > 0){
-            return kingSuites;
-        }
-        return 0;
+    //calculate the number of suites
+    public int getAvailableSuites() {
+        return numberOfSuites - bookedSuites;
     }
 
+    //calculat the number of rooms available
+    public int getAvailableRooms() {
+        return numberOfRooms - bookedBasicRooms;
+    }
 
 }
