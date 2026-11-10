@@ -20,15 +20,14 @@ public class Employee {
 
     public double getRegularHours(){
         if(hoursWorked > 40){
-            hoursWorked = 40;
+            return 40;
         }
         return hoursWorked;
     }
-
+    // calculate the overtime hours
     public double getOvertimeHours(){
         if(hoursWorked > 40){
-            hoursWorked = hoursWorked - 40;
-            return hoursWorked;
+            return hoursWorked - 40;
         }
         return 0;
     }
@@ -42,21 +41,20 @@ public class Employee {
             punchOut = time;
 
     }
-//    //method for timecard
-//    public int punchTimeCard() {
-//        return punchOut - punchIn;
-//    }
-//
-//    public int punchIn() {
-//        LocalTime time = LocalTime.now();
-//        return time.getHour
-//    }
-//
-//    public int punchOut() {
-//        LocalTime time = LocalTime.now();
-//        return punchOut(time.getHour(), time.getMinute());
-//    }
-
+    //method for timecard
+    public int punchTimeCard() {
+        return punchOut - punchIn;
+    }
+    //overload method
+    public void punchIn() {
+        LocalTime time = LocalTime.now();
+        punchIn(time.getHour());
+    }
+    //overload method
+    public void punchOut() {
+        LocalTime time = LocalTime.now();
+        punchOut(time.getHour());
+    }
 
 
 }

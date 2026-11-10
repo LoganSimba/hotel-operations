@@ -39,8 +39,12 @@ public class HotelApp {
 //        employee1.punchOut(12);
 //
 //        System.out.println(employee1.punchTimeCard());
-
-
+        //initialize the hotel
+        Hotel marriot = new Hotel("marriot", 15,30,15);
+        //testings
+        marriot.bookRoom(5, true);
+        System.out.println(marriot.getAvailableRooms());
+        System.out.println(marriot.getAvailableSuites());
 
     }
 }
