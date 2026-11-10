@@ -46,5 +46,9 @@ public class HotelApp {
         System.out.println(marriot.getAvailableRooms());
         System.out.println(marriot.getAvailableSuites());
 
+        //more test with
+        Hotel loganHotel = new Hotel("Logan", 60,100);
+        System.out.println("-------");
+        System.out.println(loganHotel.getAvailableRooms());
     }
 }

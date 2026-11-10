@@ -26,7 +26,10 @@ public class Hotel {
     }
     //added a book room method and logic
     public boolean bookRoom(int roomCount, boolean suite){
-        if (suite) {
+        if(roomCount <= 0){
+            return false;
+        }//if the user mentioned true for the suit.
+        if (suite) {//increase the bookedSuites
             if (roomCount <= getAvailableSuites()) {
                 bookedSuites += roomCount;
                 return true;
