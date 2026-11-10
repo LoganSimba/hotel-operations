@@ -68,23 +68,6 @@ public class Room {
         dirty = false;
     }
 
-    public int punchIn(int time){
-        if(occupied){
-            return time;
-        }
-        return 0;
-    }
-
-    public int punchOut(int time){
-        if(occupied){
-            return time;
-        }
-        return 0;
-    }
-    //added a method for puncthtime card
-    public int punchOutTimeCard(){
-        return punchIn - punchOut;
-    }
 
 
 }

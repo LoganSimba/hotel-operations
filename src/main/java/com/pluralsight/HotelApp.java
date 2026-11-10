@@ -4,6 +4,7 @@ public class HotelApp {
     public static void main(String[] args) {
 
     Room room = new Room(1, 124.00, false, false);
+    Employee employee1 = new Employee();
 
     //example to test when checked in
     boolean reserved = room.checkIn();
@@ -31,11 +32,13 @@ public class HotelApp {
         System.out.println("is available: " + room.isAvailable());
 
         System.out.println("----------");
-
+        //room
         room.checkIn();
-        System.out.println("Punch in time: " +room.punchIn(10));
-        System.out.println("Punch in time: " +room.punchOut(12));
+        //checked the punch time
+        employee1.punchIn(10);
+        employee1.punchOut(12);
 
+        System.out.println(employee1.punchTimeCard());
 
     }
 }

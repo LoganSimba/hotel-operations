@@ -6,6 +6,8 @@ public class Employee {
     private String department;
     private double payRate;
     private double hoursWorked;
+    private int punchIn;
+    private int punchOut;
 
     public double getTotalPay(){
         double regularPay = getRegularHours() * payRate;
@@ -27,6 +29,20 @@ public class Employee {
             return hoursWorked;
         }
         return 0;
+    }
+
+    public void punchIn(int time) {
+            punchIn = time;
+
+    }
+
+    public void punchOut(int time) {
+            punchOut = time;
+
+    }
+
+    public int punchTimeCard() {
+        return punchOut - punchIn;
     }
 
 }
