@@ -7,7 +7,15 @@ public class Room {
     private boolean occupied;
     private boolean dirty;
     private boolean available;
+    private boolean checkIn;
 
+
+    public Room(int numberOfBeds, double price, boolean occupied, boolean dirty) {
+        this.numberOfBeds = numberOfBeds;
+        this.price = price;
+        this.occupied = occupied;
+        this.dirty = dirty;
+    }
 
     public int getNumberOfBeds() {
         return numberOfBeds;
@@ -17,7 +25,7 @@ public class Room {
         return price;
     }
 
-    public boolean isOccupied() {
+    public boolean occupied() {
         return occupied;
     }
 
@@ -31,4 +39,24 @@ public class Room {
         }
         return false;
     }
+
+    //method to check in, check if the room is available before
+    public boolean checkIn(){
+        if(isAvailable()){
+            dirty = true;
+            occupied = true;
+            return true;
+        }
+        return false;
+    }
+    //added a method to check if its occupied
+    public boolean checkOut(){
+        if(occupied){
+            occupied = false;
+            dirty = true;
+            return true;
+        }
+        return false;
+    }
+
 }
