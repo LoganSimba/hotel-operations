@@ -13,11 +13,28 @@ public class HotelApp {
     System.out.println("Dirty: " + room.isDirty());
     System.out.println("is available: " + room.isAvailable());
 
+        System.out.println("-----------");
+
     boolean reservedOver = room.checkOut();
 
     System.out.println("Occupied: " + room.occupied());
     System.out.println("Dirty: " + room.isDirty());
     System.out.println("is available: " + room.isAvailable());
+
+        System.out.println("-------------");
+
+        //test to check method that cleans room
+        room.cleanRoom();
+
+        System.out.println("Occupied: " + room.occupied());
+        System.out.println("Dirty: " + room.isDirty());
+        System.out.println("is available: " + room.isAvailable());
+
+        System.out.println("----------");
+
+        room.checkIn();
+        System.out.println("Punch in time: " +room.punchIn(10));
+        System.out.println("Punch in time: " +room.punchOut(12));
 
 
     }

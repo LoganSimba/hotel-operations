@@ -1,5 +1,8 @@
 package com.pluralsight;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 public class Room {
 
     private int numberOfBeds;
@@ -8,6 +11,8 @@ public class Room {
     private boolean dirty;
     private boolean available;
     private boolean checkIn;
+    private int punchIn;
+    private int punchOut;
 
 
     public Room(int numberOfBeds, double price, boolean occupied, boolean dirty) {
@@ -58,5 +63,28 @@ public class Room {
         }
         return false;
     }
+    //method for clean room, just turn dirty to false
+    public void cleanRoom(){
+        dirty = false;
+    }
+
+    public int punchIn(int time){
+        if(occupied){
+            return time;
+        }
+        return 0;
+    }
+
+    public int punchOut(int time){
+        if(occupied){
+            return time;
+        }
+        return 0;
+    }
+    //added a method for puncthtime card
+    public int punchOutTimeCard(){
+        return punchIn - punchOut;
+    }
+
 
 }
